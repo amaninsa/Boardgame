@@ -72,7 +72,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN}}
 
     - name: Push Docker Image
-      run: 
+      run: |
         docker push avats3377/boardgame:latest
 
      - name: kubectl Action   # configuring the kubectl on the runner
