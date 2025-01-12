@@ -65,7 +65,7 @@ jobs:
 
     - name: Push Docker Image
       run: |
-          docker push adijaiswal/boardgame:latest
+          docker push avats3377/boardgame:latest
 
     - name: kubectl Action   # configuring the kubectl on the runner
       uses: tale/kubectl-action@v1
