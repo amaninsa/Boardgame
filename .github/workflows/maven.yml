@@ -50,7 +50,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t adijaiswal/boardgame:latest .
+        docker build -t avats3377/boardgame:latest .
 
     - name: Trivy Image Scan
       run: |
@@ -64,7 +64,13 @@ jobs:
 
     - name: Push Docker Image
       run: |
-          docker push adijaiswal/boardgame:latest
+          docker push avats3377/boardgame:latest
 
-
+    - name: kubectl Action   # configuring the kubectl on the runner
+      uses: tale/kubectl-action@v1
+      with:
+         base64-kube-config: ${{ secrets.KUBE_CONFIG }}
+    - run: |
+           kubectl apply -f deployment-service.yaml -n webapps
+           kubectl get svc -n webapps
 
