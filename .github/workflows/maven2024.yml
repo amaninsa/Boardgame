@@ -57,7 +57,7 @@ jobs:
         SONAR_TOKE: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
-    - name: Sst up QEMO     # it is required to set up the docker environment
+    - name: Set up QEMO     # it is required to set up the docker environment
       uses: docker/setup-qemo-action@v3
 
     - name: Set up Docker Buildx
